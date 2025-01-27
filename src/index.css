@@ -23,3 +23,9 @@ body {
 
     
 }
+.drop-shadow {
+    filter: drop-shadow(0 0 0.5rem #fcf9fc);
+  }
+  .drop-shadow-header {
+    filter: drop-shadow(0 0 0.3rem #f0b5e7);
+  }
