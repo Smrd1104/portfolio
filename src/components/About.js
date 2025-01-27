@@ -1,7 +1,7 @@
 import React from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { FaStar as StarIcon, FaBriefcase as WorkIcon, FaGraduationCap as SchoolIcon } from 'react-icons/fa';
+import { FaBriefcase as WorkIcon, FaGraduationCap as SchoolIcon } from 'react-icons/fa';
 import Divider from './Divider';
 
 const timelineData = [
@@ -55,38 +55,32 @@ const timelineData = [
         description: 'completed',
         icon: <SchoolIcon />,
     },
-    {
-        type: 'star',
-        icon: <StarIcon />,
-        title: 'Mohamed Riyasdeen',
-        subtitle: 'Journey of education and work ',
-      
-    },
+   
 ];
 
 const Timeline = () => {
     return (
-       <div className=''>
+       <div className='md:px-0 px-10 container mx-auto'>
        <h1 className='text-[3.5rem] text-center font-bold text-white drop-shadow-header -mt-24 pb-14'>Know him</h1>
             <VerticalTimeline>
                 {timelineData.map((item, index) => (
                     <VerticalTimelineElement
                         key={index}
-                        className={`vertical-timeline-element--${item.type}`}
+                        className={`vertical-timeline-element--${item.type} md:px-14`}
                         contentStyle={
                             item.type === 'work'
-                                ? { background: 'rgb(255, 255, 255)', color: '#000' }
+                                ? { background: 'pink', color: '#fff' }
                                 : item.type === 'education'
-                                    ? { background: 'rgb(255, 255, 255)', color: '#000' }
+                                    ? { background: 'skyblue', color: '#fff' }
                                     : {}
                         }
                         contentArrowStyle={
-                            item.type !== 'star' ? { borderRight: `7px solid ${item.type === 'work' ? 'rgb(166, 243, 33)' : 'rgb(233, 30, 99)'}` } : {}
+                            item.type !== 'star' ? { borderRight: `7px  solid ${item.type === 'work' ? 'pink' : 'skyblue'}` } : {}
                         }
                         date={item.date}
                         iconStyle={{
-                            background: item.type === 'work' ? 'rgb(177, 207, 26)' : item.type === 'education' ? 'rgb(233, 30, 99)' : 'rgb(148, 204, 16)',
-                            color: '#fff',
+                            background: item.type === 'work' ? 'skyblue' : item.type === 'education' ? 'pink' : 'rgb(255, 255, 255)',
+                            color: 'white',
                         }}
                         icon={item.icon}
                     >

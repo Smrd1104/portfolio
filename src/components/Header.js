@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { HiMenu, HiX } from "react-icons/hi";
+import {HiX } from "react-icons/hi";
 import logoBlack from "../assets/logo.png";
 import logoWhite from "../assets/logo.png"
 import { BiMenuAltLeft } from "react-icons/bi";
