@@ -64,7 +64,7 @@ const timelineData = [
 const Timeline = () => {
     return (
         <div className="md:px-0 px-10 container mx-auto">
-            <h1 id="about" className="text-[3.5rem] text-center font-bold text-white drop-shadow-header -mt-24 pb-14">
+            <h1 id="about" className="underline md:text-[3.5rem] text-[2.5rem] text-center font-bold text-white drop-shadow-header -mt-24 pb-14">
                 Know Him
             </h1>
             <VerticalTimeline>
@@ -74,18 +74,18 @@ const Timeline = () => {
                         className={`vertical-timeline-element--${item.type} md:px-14`}
                         contentStyle={
                             item.type === 'work'
-                                ? { background: 'pink', color: '#fff' }
+                                ? { background: 'rgba(255, 255, 255, 0.2)', color: '#fff' } // Pink with 70% opacity
                                 : item.type === 'education'
-                                ? { background: 'skyblue', color: '#fff' }
-                                : {}
+                                    ? { background: 'rgba(255, 255, 255,  0.2)', color: '#fff' } // Skyblue with 70% opacity
+                                    : { background: 'rgba(255, 255, 255,  0.2)', color: '#000' } // Default white with 70% opacity
                         }
                         contentArrowStyle={
-                            item.type !== 'star' ? { borderRight: `7px solid ${item.type === 'work' ? 'pink' : 'skyblue'}` } : {}
+                            item.type !== 'star' ? { borderRight: `7px solid ${item.type === 'work' ? 'rgba(255, 255, 255,  1)' : 'rgba(255, 255, 255, 1)'}` } : {}
                         }
                         date={<span style={{ color: item.dateColor }}>{item.date}</span>} // Add dynamic date color
                         iconStyle={{
-                            background: item.type === 'work' ? 'skyblue' : item.type === 'education' ? 'pink' : 'rgb(255, 255, 255)',
-                            color: 'white',
+                            background: item.type === 'work' ? 'rgba(255, 255, 255,  1)' : item.type === 'education' ? 'rgba(255, 255, 255,  1)' : 'rgb(255, 255, 255)',
+                            color: 'black',
                         }}
                         icon={item.icon}
                     >

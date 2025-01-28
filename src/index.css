@@ -32,13 +32,13 @@ body {
 
   @keyframes glitterEffect {
     0% {
-      box-shadow: 0 0 3px #ffdf00, 0 0 5px #ffdf00, 0 0 8px #ffdf00, 0 0 10px #ffdf00;
+      box-shadow: 0 0 3px #ffffff, 0 0 5px #fff, 0 0 8px #fff, 0 0 10px #fff;
     }
     50% {
-      box-shadow: 0 0 5px #ffdf00, 0 0 8px #ffdf00, 0 0 12px #ffdf00, 0 0 15px #ffdf00;
+      box-shadow: 0 0 5px #fff, 0 0 8px #fff, 0 0 12px #fff, 0 0 15px #fff;
     }
     100% {
-      box-shadow: 0 0 3px #ffdf00, 0 0 5px #ffdf00, 0 0 8px #ffdf00, 0 0 10px #ffdf00;
+      box-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 8px #fff, 0 0 10px #fff;
     }
   }
   
