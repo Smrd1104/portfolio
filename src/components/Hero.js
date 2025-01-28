@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import profile from "../assets/riyas.png";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -6,6 +6,7 @@ import Typewriter from 'typewriter-effect'; // Import typewriter-effect
 import Divider from './Divider';
 
 const Hero = () => {
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -13,6 +14,8 @@ const Hero = () => {
       easing: 'ease-in-out',
       once: true,
     });
+
+
   }, []);
 
   return (
@@ -22,9 +25,10 @@ const Hero = () => {
           <img
             src={profile}
             alt="Logo"
-            className="object-cover drop-shadow md:w-[300px] w-[200px] h-auto transition-all duration-300"
+            className="border-4 border-[#FFDF00] md:translate-x-10 rounded-[3rem] object-cover md:w-[300px] w-[200px] h-auto transition-all duration-300 animate-glitter"
           />
         </div>
+
         <div className='md:translate-x-5 text-center'>
           <p data-aos="fade-right" className='drop-shadow-header md:text-[4rem] text-[2rem] font-bold text-white'>
             {' '}

@@ -6,7 +6,9 @@ export default {
   ],
   theme: {
     extend: {
-      
+      animation: {
+        glitter: "glitterEffect 1s infinite", // Use the keyframes defined earlier
+      },
     },
   },
   plugins: [],
