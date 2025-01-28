@@ -60,8 +60,8 @@ const timelineData = [
 
 const Timeline = () => {
     return (
-       <div className='md:px-0 px-10 container mx-auto'>
-       <h1 className='text-[3.5rem] text-center font-bold text-white drop-shadow-header -mt-24 pb-14'>Know him</h1>
+       <div  className='md:px-0 px-10 container mx-auto'>
+       <h1 id='about' className='text-[3.5rem] text-center font-bold text-white drop-shadow-header -mt-24 pb-14 '>Know him</h1>
             <VerticalTimeline>
                 {timelineData.map((item, index) => (
                     <VerticalTimelineElement

@@ -2,8 +2,8 @@ import React from 'react'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import About from '../components/About'
-import Card from '../components/projects/Card'
 import Projects from '../components/projects/Projects'
+import Footer from '../components/Footer'
 const Home = () => {
   return (
     <div className='bg-gradient-to-r from-[#922F37] to-[#97CEEB] '>
@@ -11,6 +11,7 @@ const Home = () => {
         <Hero/>
         <About/>
         <Projects/>
+        <Footer/>
     </div>
   )
 }

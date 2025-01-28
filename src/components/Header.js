@@ -8,14 +8,14 @@ import pdf from "../assets/Profile-img.jpg"
 const NAV_LINKS = [
   { name: "Home", href: "/" },
   { name: "About", href: "/#about" },
-  { name: "Award", href: "/#award" },
-  { name: "Testimonials", href: "/#testimonials" },
-  { name: "Gallery", href: "/gallery" },
-  {
-    name: "Download Portfolio",
-    href:pdf || "#",
-    download: pdf ? "Portfolio_Arunn_Raj.pdf" : undefined ,
-  },
+  { name: "Projects", href: "/#projects" },
+  { name: "Contact Us", href: "/#contact-us" },
+
+  // {
+  //   name: "Download Portfolio",
+  //   href:pdf || "#",
+  //   download: pdf ? "Portfolio_Arunn_Raj.pdf" : undefined ,
+  // },
 ];
 
 
