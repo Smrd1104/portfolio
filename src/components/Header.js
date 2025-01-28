@@ -3,19 +3,12 @@ import {HiX } from "react-icons/hi";
 import logoBlack from "../assets/logo.png";
 import logoWhite from "../assets/logo.png"
 import { BiMenuAltLeft } from "react-icons/bi";
-import pdf from "../assets/Profile-img.jpg"
 
 const NAV_LINKS = [
   { name: "Home", href: "/" },
   { name: "About", href: "/#about" },
   { name: "Projects", href: "/#projects" },
   { name: "Contact Us", href: "/#contact-us" },
-
-  // {
-  //   name: "Download Portfolio",
-  //   href:pdf || "#",
-  //   download: pdf ? "Portfolio_Arunn_Raj.pdf" : undefined ,
-  // },
 ];
 
 
@@ -77,7 +70,7 @@ function Header() {
             >
               <a
                 href={link.href}
-                download={link.download}
+               
               >
                 {link.name}
               </a>
@@ -123,7 +116,6 @@ function Header() {
               >
                 <a
                   href={link.href}
-                  download={link.download ? "Portfolio_Arunn_Raj.pdf" : undefined}
                 >
                   {link.name}
                 </a>

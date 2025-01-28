@@ -32,7 +32,7 @@ const projectData = [
 export default function App() {
     return (
         <div className="container mx-auto">
-            <h1  id='projects' className='text-[3.5rem] text-center font-bold text-white drop-shadow-header mt-10 pb-14 '>Projects</h1>
+            <h1 id='projects' className='text-[3.5rem] text-center font-bold text-white drop-shadow-header mt-10 pb-14 '>Projects</h1>
 
             <div className="flex justify-center items-center  px-10 grid md:grid-cols-4 grid-cols-1 gap-10 ">
                 {projectData.map((project, index) => (
