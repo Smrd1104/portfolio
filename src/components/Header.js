@@ -65,7 +65,7 @@ function Header() {
           {NAV_LINKS.map((link) => (
             <li
               key={link.name}
-              className={`font-bold text-[1.5rem] cursor-pointer text-black ${isScrolled ? "text-black" : "text-white"
+              className={`font-bold text-[1.2rem] cursor-pointer text-black ${isScrolled ? "text-black" : "text-white"
                 } transition-all duration-300`}
             >
               <a
