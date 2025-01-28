@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
-import {HiX } from "react-icons/hi";
+import { HiX } from "react-icons/hi";
 import logoBlack from "../assets/logo.png";
-import logoWhite from "../assets/logo.png"
+import logoWhite from "../assets/logo.png";
 import { BiMenuAltLeft } from "react-icons/bi";
 
 const NAV_LINKS = [
@@ -11,11 +11,13 @@ const NAV_LINKS = [
   { name: "Contact Us", href: "/#contact-us" },
 ];
 
-
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef(null);
+
+  // Detect active link
+  const currentPath = window.location.pathname;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,11 +48,12 @@ function Header() {
 
   return (
     <header
-      className={`w-full fixed z-50 top-0 left-0 h-auto  ${isScrolled ? "backdrop-blur-md bg-white/70" : "bg-transparent"
-        } transition-all duration-300 md:px-10`}
+      className={`w-full fixed z-50 top-0 left-0 h-auto ${
+        isScrolled ? "backdrop-blur-md bg-white/70" : "bg-transparent"
+      } transition-all duration-300 md:px-10`}
       role="navigation"
     >
-      <div className="flex flex-row justify-between  items-center py-4 px-6 mx-auto max-w-7xl">
+      <div className="flex flex-row justify-between items-center py-4 px-6 mx-auto max-w-7xl">
         {/* Logo */}
         <a href="/" className="flex flex-col justify-start items-start gap-0">
           <img
@@ -65,19 +68,16 @@ function Header() {
           {NAV_LINKS.map((link) => (
             <li
               key={link.name}
-              className={`font-bold text-[1.2rem] cursor-pointer text-black ${isScrolled ? "text-black" : "text-white"
-                } transition-all duration-300`}
+              className={`font-bold text-[1.2rem] cursor-pointer ${
+                isScrolled ? "text-black" : "text-white"
+              } ${
+                currentPath === link.href ? "underline underline-offset-4" : ""
+              } transition-all duration-300`}
             >
-              <a
-                href={link.href}
-               
-              >
-                {link.name}
-              </a>
+              <a href={link.href}>{link.name}</a>
             </li>
           ))}
         </ul>
-
 
         {/* Hamburger Menu (for mobile screens) */}
         <button
@@ -112,17 +112,14 @@ function Header() {
               <li
                 key={link.name}
                 onClick={() => setIsMenuOpen(false)}
-                className="cursor-pointer"
+                className={`cursor-pointer ${
+                  currentPath === link.href ? "underline" : ""
+                }`}
               >
-                <a
-                  href={link.href}
-                >
-                  {link.name}
-                </a>
+                <a href={link.href}>{link.name}</a>
               </li>
             ))}
           </ul>
-
         </div>
       )}
     </header>

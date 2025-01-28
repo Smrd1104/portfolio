@@ -27,11 +27,11 @@ const Hero = () => {
         </div>
         <div className='md:translate-x-5 text-center'>
           <p data-aos="fade-right" className='drop-shadow-header md:text-[4rem] text-[2rem] font-bold text-white'>
-           <span className='text-[3rem]'> </span>{' '}
+            {' '}
             <span className="text-yellow-300">
               <Typewriter
                 options={{
-                  strings: ["Hi, I'm",'Mohamed Riyasdeen.',],
+                  strings: ["Hi, I'm", 'Mohamed Riyasdeen.',],
                   autoStart: true,
                   loop: true,
                   delay: 50,
