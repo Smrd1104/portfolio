@@ -8,6 +8,7 @@ const timelineData = [
     {
         type: 'work',
         date: '2024 - present',
+        dateColor: '#fff', // Add date color
         title: 'Web Developer',
         subtitle: 'Tamil Nadu',
         description: 'React Developer ',
@@ -16,24 +17,25 @@ const timelineData = [
     {
         type: 'work',
         date: '2023 - 2024',
+        dateColor: '#fff', // Add date color
         title: 'Front-end Developer',
         subtitle: 'Hyderabad',
-        description: 'Used react frame work to create website',
+        description: 'Used react framework to create websites',
         icon: <WorkIcon />,
     },
     {
         type: 'work',
         date: '2022 - 2023',
+        dateColor: '#fff', // Add date color
         title: 'Data Extract Analyst',
-        subtitle: 'Villupuram,Tamil Nadu',
-        description: 'User data analyst through the correct data to website',
+        subtitle: 'Villupuram, Tamil Nadu',
+        description: 'Analyzed data and ensured accuracy for website integration',
         icon: <WorkIcon />,
     },
-   
-   
     {
         type: 'education',
-        date: '2014-2018',
+        date: '2014 - 2018',
+        dateColor: '#fff', // Add date color
         title: 'B.E Mechanical Engineering',
         subtitle: 'Bachelor Degree',
         description: 'Completed Engineering degree with first class CGPA 7.88',
@@ -42,26 +44,29 @@ const timelineData = [
     {
         type: 'education',
         date: '2012 - 2014',
-        title: 'Higher Secondary School ',
+        dateColor: '#fff', // Add date color
+        title: 'Higher Secondary School',
         subtitle: '',
-        description: 'maths,physics,chemistry,computer science course completed',
+        description: 'Maths, Physics, Chemistry, and Computer Science courses completed',
         icon: <SchoolIcon />,
     },
     {
         type: 'education',
         date: '2011 - 2012',
-        title: 'SSLC  ',
+        dateColor: '#fff', // Add date color
+        title: 'SSLC',
         subtitle: '',
-        description: 'completed',
+        description: 'Completed',
         icon: <SchoolIcon />,
     },
-   
 ];
 
 const Timeline = () => {
     return (
-       <div  className='md:px-0 px-10 container mx-auto'>
-       <h1 id='about' className='text-[3.5rem] text-center font-bold text-white drop-shadow-header -mt-24 pb-14 '>Know him</h1>
+        <div className="md:px-0 px-10 container mx-auto">
+            <h1 id="about" className="text-[3.5rem] text-center font-bold text-white drop-shadow-header -mt-24 pb-14">
+                Know Him
+            </h1>
             <VerticalTimeline>
                 {timelineData.map((item, index) => (
                     <VerticalTimelineElement
@@ -71,13 +76,13 @@ const Timeline = () => {
                             item.type === 'work'
                                 ? { background: 'pink', color: '#fff' }
                                 : item.type === 'education'
-                                    ? { background: 'skyblue', color: '#fff' }
-                                    : {}
+                                ? { background: 'skyblue', color: '#fff' }
+                                : {}
                         }
                         contentArrowStyle={
-                            item.type !== 'star' ? { borderRight: `7px  solid ${item.type === 'work' ? 'pink' : 'skyblue'}` } : {}
+                            item.type !== 'star' ? { borderRight: `7px solid ${item.type === 'work' ? 'pink' : 'skyblue'}` } : {}
                         }
-                        date={item.date}
+                        date={<span style={{ color: item.dateColor }}>{item.date}</span>} // Add dynamic date color
                         iconStyle={{
                             background: item.type === 'work' ? 'skyblue' : item.type === 'education' ? 'pink' : 'rgb(255, 255, 255)',
                             color: 'white',
@@ -90,8 +95,8 @@ const Timeline = () => {
                     </VerticalTimelineElement>
                 ))}
             </VerticalTimeline>
-            <Divider/>
-            </div>
+            <Divider />
+        </div>
     );
 };
 

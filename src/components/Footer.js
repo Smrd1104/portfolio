@@ -25,7 +25,7 @@ const Footer = () => {
                 <Divider />
             </div>
             <div className="py-5 text-center">
-                <span className="text-[#d9d9d9] md:text-[1rem] text-[1rem] font-semibold text-center"> {new Date().getFullYear()}@All rights Reserved & Affiliated to Riyas</span>
+                <span className="text-[#fff] md:text-[1rem] text-[1rem] font-semibold text-center"> {new Date().getFullYear()}@All rights Reserved & Affiliated to Riyas</span>
             </div>
         </div>
     )
