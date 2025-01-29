@@ -17,7 +17,7 @@ const Footer = () => {
                     <SiGmail className='text-[2rem]' />
                     <p className='text-[1rem]'>mriyasdeen1104@gmail.com</p>
                 </div>
-                <a target='_blank' href='https://www.linkedin.com/in/mohamed-riyasdeen-11mrd97/'>
+                <a href='https://www.linkedin.com/in/mohamed-riyasdeen-11mrd97/' target="_blank" rel="noreferrer">
                     <div className='flex flex-row gap-2 items-center text-white font-semibold'>
 
                         <FaLinkedinIn  className='text-[2rem]' />
