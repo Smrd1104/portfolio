@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect} from 'react';
 import profile from "../assets/mohamed.png";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
