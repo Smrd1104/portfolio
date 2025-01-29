@@ -1,0 +1,30 @@
+{
+  "defaults": {
+    "project": 1,
+    "env": 1
+  },
+  "actives": {
+    "project": 1,
+    "env": 1
+  },
+  "projects": [
+    {
+      "idx": 1,
+      "id": "7839000000009001",
+      "name": "portfolio-riyas",
+      "domain": {
+        "id": "50024736758",
+        "name": "portfolio-riyas-60030950806.development"
+      },
+      "timezone": "Asia/Kolkata",
+      "env": [
+        {
+          "idx": 1,
+          "id": "60030950806",
+          "name": "Development",
+          "type": 3
+        }
+      ]
+    }
+  ]
+}
