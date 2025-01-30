@@ -5,17 +5,23 @@ const ProjectCard = ({ img, projectTitle, projectDescription }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div
+    <motion.div
       className="group relative w-full max-w-sm rounded-2xl overflow-hidden shadow-lg cursor-pointer drop-shadow-header"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={() => setIsHovered(!isHovered)}
+      whileHover={{ scale: 1.05 }} // Scale up on hover
+      whileTap={{ scale: 0.95 }} // Scale down on tap
+      initial={{ opacity: 0, y: 50 }} // Initial animation state
+      animate={{ opacity: 1, y: 0 }} // Animate to this state
+      transition={{ duration: 0.5 }} // Animation duration
     >
       {/* Project Image */}
-      <img
+      <motion.img
         src={img}
         alt={projectTitle}
         className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+        whileHover={{ scale: 1.1 }} // Scale up image on hover
       />
 
       {/* Hover Details */}
@@ -24,12 +30,25 @@ const ProjectCard = ({ img, projectTitle, projectDescription }) => {
         animate={{ opacity: isHovered ? 1 : 0 }}
         className="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center text-white p-4 transition-opacity duration-300"
       >
-        <h2 className="text-xl font-bold mb-2 drop-shadow-header">{projectTitle}</h2>
-        <p className="text-sm text-center">{projectDescription}</p>
+        <motion.h2
+          className="text-xl font-bold mb-2 drop-shadow-header"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: isHovered ? 0 : 20, opacity: isHovered ? 1 : 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          {projectTitle}
+        </motion.h2>
+        <motion.p
+          className="text-sm text-center"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: isHovered ? 0 : 20, opacity: isHovered ? 1 : 0 }}
+          transition={{ delay: 0.4 }}
+        >
+          {projectDescription}
+        </motion.p>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
-export default ProjectCard
 
-// export default Card<div><h1  className='text-[3.5rem] text-center font-bold text-white drop-shadow-header mt-10  pb-14'>Projects</h1></div>
+export default ProjectCard;

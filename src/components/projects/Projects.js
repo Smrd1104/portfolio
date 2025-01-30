@@ -50,7 +50,7 @@ export default function App() {
             </div>
 
             {/* Divider */}
-            <div className="md:px-0 px-10">
+            <div className="md:px-0 px-10 mt-10">
                 <Divider />
             </div>
         </div>
