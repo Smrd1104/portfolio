@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+
 const ProjectCard = ({ img, projectTitle, projectDescription }) => {
   const [isHovered, setIsHovered] = useState(false);
 
