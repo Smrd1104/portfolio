@@ -3,6 +3,7 @@ import { HiX } from "react-icons/hi";
 import logoBlack from "../assets/logo.png";
 import logoWhite from "../assets/logo.png";
 import { BiMenuAltLeft } from "react-icons/bi";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
   { name: "Home", href: "/" },
@@ -48,9 +49,8 @@ function Header() {
 
   return (
     <header
-      className={`w-full fixed z-50 top-0 left-0 h-auto ${
-        isScrolled ? "backdrop-blur-md bg-white/70" : "bg-transparent"
-      } transition-all duration-300 md:px-10`}
+      className={`w-full fixed z-50 top-0 left-0 h-auto ${isScrolled ? "md:backdrop-blur-md bg-white/70" : "md:bg-transparent"
+        } transition-all duration-300 md:px-10`}
       role="navigation"
     >
       <div className="flex flex-row justify-between items-center py-4 px-6 mx-auto max-w-7xl">
@@ -68,11 +68,9 @@ function Header() {
           {NAV_LINKS.map((link) => (
             <li
               key={link.name}
-              className={`font-bold text-[1.2rem] cursor-pointer ${
-                isScrolled ? "text-black" : "text-white"
-              } ${
-                currentPath === link.href ? "underline underline-offset-4" : ""
-              } transition-all duration-300`}
+              className={`font-bold text-[1.2rem] cursor-pointer ${isScrolled ? "text-black" : "text-white"
+                } ${currentPath === link.href ? "underline underline-offset-4" : ""
+                } transition-all duration-300`}
             >
               <a href={link.href}>{link.name}</a>
             </li>
@@ -87,7 +85,7 @@ function Header() {
           className="lg:hidden"
         >
           {isMenuOpen ? (
-            <HiX size={30} color={isScrolled ? "black" : "white"} />
+            ''
           ) : (
             <BiMenuAltLeft size={50} color={isScrolled ? "black" : "white"} />
           )}
@@ -96,31 +94,36 @@ function Header() {
 
       {/* Mobile Drawer */}
       {isMenuOpen && (
-        <div
-          ref={menuRef}
-          className="lg:hidden fixed top-0 left-0 w-full h-screen bg-gray-400 z-50 p-6 transition-transform duration-300"
-        >
-          <button
-            onClick={() => setIsMenuOpen(false)}
-            className="absolute top-7 right-7 border-2 border-dotted border-white"
-            aria-label="Close Menu"
+        <AnimatePresence>
+          <motion.div
+            ref={menuRef}
+            className="lg:hidden fixed top-0 left-0 w-full h-1/2  bg-gray-400   z-50 p-6"
+            initial={{ x: "-100%" }} // Start off-screen to the left
+            animate={{ x: isMenuOpen ? 0 : "-100%" }} // Slide in when open
+            exit={{ x: "-100%" }} // Slide out when closed
+            transition={{ type: "tween", duration: 0.3 }} // Smooth transition
           >
-            <HiX size={30} color="white" />
-          </button>
-          <ul className="flex flex-col gap-6 text-white text-[1.5rem] text-center mt-24">
-            {NAV_LINKS.map((link) => (
-              <li
-                key={link.name}
-                onClick={() => setIsMenuOpen(false)}
-                className={`cursor-pointer ${
-                  currentPath === link.href ? "underline" : ""
-                }`}
-              >
-                <a href={link.href}>{link.name}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="absolute top-8 right-7 border-2 border-dotted border-white"
+              aria-label="Close Menu"
+            >
+              <HiX size={30} color="white" />
+            </button>
+            <ul className="flex flex-col gap-6 text-white text-[1.5rem] text-center mt-24">
+              {NAV_LINKS.map((link) => (
+                <li
+                  key={link.name}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`cursor-pointer ${currentPath === link.href ? "underline" : ""
+                    }`}
+                >
+                  <a href={link.href}>{link.name}</a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </AnimatePresence>
       )}
     </header>
   );
