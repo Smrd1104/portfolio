@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "riyas-portfolio-website",
+    "shop": "riyas-portfolio-website"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}
