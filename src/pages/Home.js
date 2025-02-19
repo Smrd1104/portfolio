@@ -2,7 +2,6 @@ import React from 'react'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import Projects from '../components/projects/Projects'
-import video from '../assets/bg.mp4'
 const Home = () => {
   return (
     <div className="relative w-full h-full">

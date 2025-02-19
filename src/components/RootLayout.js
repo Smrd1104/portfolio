@@ -16,7 +16,7 @@ const RootLayout = () => {
                 <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.
             </video> */}
-            <img src={img} className="absolute top-0 left-0  w-full h-full object-cover -z-10" />
+            <img src={img} alt='image' className="absolute top-0 left-0  w-full h-full object-cover -z-10" />
 
             {/* Gradient Overlay */}
             <div className="absolute top-0 left-0 w-full  bg-black/70 h-full  mix-blend-multiply"></div>
