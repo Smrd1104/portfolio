@@ -25,6 +25,7 @@ const Hero = () => {
           <img
             src={profile}
             alt="Logo"
+            loading='lazy'
             className="border-4 border-[#fff] md:translate-x-10 rounded-[3rem] object-cover md:w-[300px] w-[250px] h-auto transition-all duration-300 animate-glitter"
           />
         </div>

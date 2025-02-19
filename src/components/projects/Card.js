@@ -20,6 +20,7 @@ const ProjectCard = ({ img, projectTitle, projectDescription }) => {
       <motion.img
         src={img}
         alt={projectTitle}
+         loading='lazy'
         className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
         whileHover={{ scale: 1.1 }} // Scale up image on hover
       />
