@@ -6,7 +6,7 @@ const ProjectCard = ({ img, projectTitle, projectDescription }) => {
 
   return (
     <motion.div
-      className="group relative w-full max-w-sm rounded-2xl overflow-hidden shadow-lg cursor-pointer drop-shadow-header"
+      className="group relative w-full max-w-sm rounded overflow-hidden shadow-lg cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={() => setIsHovered(!isHovered)}

@@ -1,14 +1,13 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
-import video from '../assets/bg.mp4'
-
+import img from "../assets/diamond-bg.jpg"
 
 const RootLayout = () => {
     return (
         <div className="relative w-full h-full">
             {/* Video Background */}
-            <video
+            {/* <video
                 autoPlay
                 loop
                 muted
@@ -16,10 +15,11 @@ const RootLayout = () => {
             >
                 <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.
-            </video>
+            </video> */}
+            <img src={img} className="absolute top-0 left-0  w-full h-full object-cover -z-10" />
 
             {/* Gradient Overlay */}
-            <div className="absolute top-0 left-0 w-full   h-full  mix-blend-multiply"></div>
+            <div className="absolute top-0 left-0 w-full  bg-black/70 h-full  mix-blend-multiply"></div>
 
             <main className="w-full h-auto overflow-x-hidden " >
                 <Header />
