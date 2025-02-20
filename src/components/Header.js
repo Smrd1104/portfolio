@@ -49,7 +49,7 @@ function Header() {
 
   return (
     <header
-      className={`w-full fixed z-50 top-0 left-0 h-auto ${isScrolled ? "backdrop-blur-md bg-white/70" : "md:bg-transparent"
+      className={`w-full fixed z-50 top-0 left-0 h-auto ${isScrolled ? "md:backdrop-blur-md bg-white/70" : "md:bg-transparent"
         } transition-all duration-300 md:px-10`}
       role="navigation"
     >
